@@ -3,7 +3,8 @@
 #include "src\ArrayAdditionModel.cpp"
 #include <random>
 
-#define N 100
+#define N 10000
+#define EXPERIMENT_COUNT 20
 #define RANGE_OF_INT_VALUES 1024
 
 using namespace std;
@@ -22,12 +23,14 @@ int main()
     ArrayAdditionModel arrayAdditionModel (inputA, inputB, output, N);
 
     arrayAdditionModel.execute();
-    for(int i=0; i<N; i++)
+    /* for(int i=0; i<N; i++)
         cout << output[i] << ", ";
-
-    arrayAdditionModel.setData(inputB, inputC, output, N).execute();
-    for(int i=0; i<N; i++)
+    */
+    for(int exp = 0; exp<EXPERIMENT_COUNT; exp++){
+        arrayAdditionModel.setData(inputB, inputC, output, N).execute();
+    }
+    /* for(int i=0; i<N; i++)
         cout << output[i] << ", ";
-
+    */
     return 0;
 }

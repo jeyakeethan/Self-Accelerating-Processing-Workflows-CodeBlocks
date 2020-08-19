@@ -1,7 +1,11 @@
 #include <iostream>
 #include <computationalmodel.h>
-#include <ctime>
 
+#include <windows.h>
+#include <iomanip>
+#include <set>
+#include <time.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -22,18 +26,29 @@ void ComputationalModel::execute()
         GPUImplementation();
     } else  */
 
-    auto t_start = clock();
-    if(tCPU<=tGPU){
+    LARGE_INTEGER start, stop, freq;
+	QueryPerformanceFrequency(&freq);
+    QueryPerformanceCounter(&start);
+
+    if(tCPU<tGPU){
         CPUImplementation();
-        auto t_end = clock();
-        tCPU = (t_end - t_start)/CLOCKS_PER_SEC;
-        cout << "CPUtime:" << tCPU <<endl;
+        QueryPerformanceCounter(&stop);
     }
     else {
         GPUImplementation();
-        auto t_end = clock();
-        tCPU = (t_end - t_start)/CLOCKS_PER_SEC;
-        cout << "GPUtime:" << tGPU <<endl;
+        QueryPerformanceCounter(&stop);
+    }
+
+
+    // To a async function
+    double delay = (double)(stop.QuadPart - start.QuadPart) / (double)freq.QuadPart;
+    int time = int(delay * 100000 + 0.5);
+    if(tCPU<tGPU){
+        tCPU = long(time);
+        cout << "CPU Time: " << time << " ms" << endl;
+    } else {
+        tGPU = long(time);
+        cout << "GPU Time: " << time << " ms" << endl;
     }
 
     //auto time = end
