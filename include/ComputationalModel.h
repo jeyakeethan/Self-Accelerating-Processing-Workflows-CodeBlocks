@@ -4,8 +4,8 @@
 class ComputationalModel
 {
     public:
-        ComputationalModel();
-        virtual ~ComputationalModel();
+        //ComputationalModel();
+        //virtual ~ComputationalModel();
         virtual void CPUImplementation() = 0;
         virtual void GPUImplementation() = 0;
         void execute();

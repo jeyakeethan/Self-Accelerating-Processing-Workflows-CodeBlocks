@@ -9,20 +9,13 @@
 
 using namespace std;
 
-ComputationalModel::ComputationalModel()
-{
-    //ctor
-}
+// ComputationalModel::ComputationalModel(){}
 
-ComputationalModel::~ComputationalModel()
-{
-    //dtor
-}
+// ComputationalModel::~ComputationalModel(){}
 
 void ComputationalModel::execute()
 {
     bool bounded = true;
-    cout << tCPU <<","<<tGPU << endl;
 /*    if(tCPU+tGPU==0){
         GPUImplementation();
     } else  */
@@ -52,8 +45,5 @@ void ComputationalModel::execute()
         cout << "GPU Time: " << tGPU << " ms" << endl;
     }
 
-    //auto time = end
-        //auto end_time = std::chrono::high_resolution_clock::now();
-          // tCPU = end_time - start_time;_time - start_time;
-    // std::cout << time/chrono::milliseconds(1) << "ms\n";
+    cout << tCPU <<","<<tGPU << endl;
 }
