@@ -24,7 +24,7 @@ void ComputationalModel::execute()
 	QueryPerformanceFrequency(&freq);
     QueryPerformanceCounter(&start);
 
-    if(tCPU<=tGPU){
+    if(tCPU<tGPU){
         CPUImplementation();
         QueryPerformanceCounter(&stop);
     }
@@ -45,5 +45,5 @@ void ComputationalModel::execute()
         cout << "GPU Time: " << tGPU << " ms" << endl;
     }
 
-    cout << tCPU <<","<<tGPU << endl;
+    cout << tCPU <<","<<tGPU << endl << endl;
 }

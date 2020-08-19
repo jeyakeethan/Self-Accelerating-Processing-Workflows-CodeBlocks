@@ -28,5 +28,8 @@ int main()
             cout << output[i] << ", ";
         */
     }
+    int enter;
+    cout << "Enter to close ..." << endl;
+    cin >> enter;
     return 0;
 }
