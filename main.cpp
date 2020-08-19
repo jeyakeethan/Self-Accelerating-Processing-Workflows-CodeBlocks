@@ -1,24 +1,33 @@
 #include <iostream>
 #include<ComputationalModel.h>
 #include "src\ArrayAdditionModel.cpp"
+#include <random>
+
+#define N 100
+#define RANGE_OF_INT_VALUES 1024
 
 using namespace std;
 int main()
 {
-    int inputA[4] = {2, 2, 1, 2};
-    int inputB[4] = {2, 2, 1, 2};
-    int inputA1[4] = {1, 1, 1, 1};
-    int inputB1[4] = {1, 1, 1, 1};
-    int output[4];
-    ArrayAdditionModel arrayAdditionModel (inputA, inputB, output, 4);
+    int inputA[N];
+    int inputB[N];
+    int inputC[N];
+    int output[N];
+    for(int k = 0; k<N; k++){
+        inputA[k] = rand()%RANGE_OF_INT_VALUES;
+        inputB[k] = rand()%RANGE_OF_INT_VALUES;
+        inputC[k] = rand()%RANGE_OF_INT_VALUES;
+    }
+
+    ArrayAdditionModel arrayAdditionModel (inputA, inputB, output, N);
 
     arrayAdditionModel.execute();
-    for(int i=0; i<4; i++)
-        cout << output[i] <<endl;
+    for(int i=0; i<N; i++)
+        cout << output[i] << ", ";
 
-    arrayAdditionModel.setData(inputA1, inputB1, output, 4).execute();
-    for(int i=0; i<4; i++)
-        cout << output[i] <<endl;
+    arrayAdditionModel.setData(inputB, inputC, output, N).execute();
+    for(int i=0; i<N; i++)
+        cout << output[i] << ", ";
 
     return 0;
 }

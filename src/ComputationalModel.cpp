@@ -1,6 +1,7 @@
 #include <iostream>
 #include <computationalmodel.h>
-#include <chrono>
+#include <ctime>
+
 
 using namespace std;
 
@@ -21,20 +22,18 @@ void ComputationalModel::execute()
         GPUImplementation();
     } else  */
 
-    auto start_time = chrono::high_resolution_clock::now();
+    auto t_start = clock();
     if(tCPU<=tGPU){
         CPUImplementation();
-        auto end_time = chrono::high_resolution_clock::now();
-        auto time = end_time - start_time;
-        tCPU = time/std::chrono::milliseconds(1);
-           cout << "time:" << tCPU <<endl;
+        auto t_end = clock();
+        tCPU = (t_end - t_start)/CLOCKS_PER_SEC;
+        cout << "CPUtime:" << tCPU <<endl;
     }
     else {
         GPUImplementation();
-        auto end_time = chrono::high_resolution_clock::now();
-        auto time = end_time - start_time;
-        tGPU = time/std::chrono::milliseconds(1);
-          cout << "time:" << time/std::chrono::milliseconds(1) <<endl;
+        auto t_end = clock();
+        tCPU = (t_end - t_start)/CLOCKS_PER_SEC;
+        cout << "GPUtime:" << tGPU <<endl;
     }
 
     //auto time = end
