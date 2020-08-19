@@ -4,3 +4,21 @@
 
 1597748452 e:\fyp\self-accelerating processing workflow\include\computationalmodel.h
 
+1597811342 source:e:\fyp\self-accelerating processing workflows\src\computationalmodel.cpp
+	"computationalmodel.h"
+
+1597813209 e:\fyp\self-accelerating processing workflows\include\computationalmodel.h
+
+1597813351 source:e:\fyp\self-accelerating processing workflows\main.cpp
+	<iostream>
+	<ComputationalModel.h>
+	"src\ArrayAdditionModel.cpp"
+
+1597810130 e:\fyp\self-accelerating processing workflows\src\arrayadditionmodel.cpp
+	<iostream>
+	<ComputationalModel.h>
+
+1597810130 source:e:\fyp\self-accelerating processing workflows\src\arrayadditionmodel.cpp
+	<iostream>
+	<ComputationalModel.h>
+
