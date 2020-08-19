@@ -22,6 +22,7 @@ ComputationalModel::~ComputationalModel()
 void ComputationalModel::execute()
 {
     bool bounded = true;
+    cout << tCPU <<","<<tGPU << endl;
 /*    if(tCPU+tGPU==0){
         GPUImplementation();
     } else  */
@@ -30,7 +31,7 @@ void ComputationalModel::execute()
 	QueryPerformanceFrequency(&freq);
     QueryPerformanceCounter(&start);
 
-    if(tCPU<tGPU){
+    if(tCPU<=tGPU){
         CPUImplementation();
         QueryPerformanceCounter(&stop);
     }
@@ -45,10 +46,10 @@ void ComputationalModel::execute()
     int time = int(delay * 100000 + 0.5);
     if(tCPU<tGPU){
         tCPU = long(time);
-        cout << "CPU Time: " << time << " ms" << endl;
+        cout << "CPU Time: " << tCPU << " ms" << endl;
     } else {
         tGPU = long(time);
-        cout << "GPU Time: " << time << " ms" << endl;
+        cout << "GPU Time: " << tGPU << " ms" << endl;
     }
 
     //auto time = end

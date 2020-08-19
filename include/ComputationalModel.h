@@ -13,8 +13,8 @@ class ComputationalModel
     protected:
 
     private:
-        long tCPU = 0;
-        long tGPU = 0;
+        volatile long tCPU = 0;
+        volatile long tGPU = 0;
         bool isGPU = true;
 };
 

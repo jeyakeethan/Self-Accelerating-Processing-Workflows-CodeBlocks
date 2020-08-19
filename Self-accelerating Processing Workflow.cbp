@@ -36,6 +36,7 @@
 		</Compiler>
 		<Unit filename="include/ComputationalModel.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/ArrayAdditionModel.cpp" />
 		<Unit filename="src/ComputationalModel.cpp" />
 		<Extensions>
 			<code_completion />
