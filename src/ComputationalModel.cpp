@@ -40,7 +40,6 @@ void ComputationalModel::updateResults(clock_t start, clock_t stop, int processo
     // To a async function
     clock_t delay = stop - start;
     float time = (float)delay/CLOCKS_PER_SEC;
-    printf ("It took me %d clicks (%f seconds).\n",delay,((float)delay)/CLOCKS_PER_SEC);
     if(processor==0){
         cout << "CPU Time: " << time << " ms" << endl;
     } else {
