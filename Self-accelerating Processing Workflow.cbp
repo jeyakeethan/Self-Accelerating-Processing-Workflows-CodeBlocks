@@ -33,11 +33,21 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="E:/FYP/Self-accelerating Processing Workflows/src" />
+			<Add directory="E:/FYP/Self-accelerating Processing Workflows/include" />
+			<Add directory="../../Cuda/common/inc" />
 		</Compiler>
+		<Linker>
+			<Add directory="../../Cuda/common/lib" />
+			<Add directory="../../Cuda/common/lib/x64" />
+		</Linker>
 		<Unit filename="include/ComputationalModel.h" />
+		<Unit filename="include/WorkflowManager.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/ArrayAddition.cu" />
 		<Unit filename="src/ArrayAdditionModel.cpp" />
 		<Unit filename="src/ComputationalModel.cpp" />
+		<Unit filename="src/WorkflowManager.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
