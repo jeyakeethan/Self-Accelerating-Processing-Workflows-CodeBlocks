@@ -1,6 +1,6 @@
 #include <iostream>
 #include <ComputationalModel.h>
-#include "src/ArrayAdditionModel.cu"
+#include "src/ArrayAdditionModel.cpp"
 #include <random>
 
 #define N 10000
