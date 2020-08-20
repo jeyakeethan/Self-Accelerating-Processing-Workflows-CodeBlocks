@@ -1,5 +1,5 @@
 #include <iostream>
-#include <ComputationalModel.h>
+#include <../include/ComputationalModel.h>
 #include "src/ArrayAdditionModel.cpp"
 #include <random>
 
