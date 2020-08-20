@@ -1,5 +1,5 @@
 #include <iostream>
-#include <computationalmodel.h>
+#include <ComputationalModel.h>
 
 #include <windows.h>
 #include <iomanip>
