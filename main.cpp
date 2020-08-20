@@ -1,11 +1,9 @@
 #include <iostream>
+#include <Constants.h>
 #include <ComputationalModel.h>
-#include "src/ArrayAdditionModel.cpp"
+#include <ArrayAdditionModel.h>
 #include <random>
 
-#define N 10000
-#define EXPERIMENT_COUNT 20
-#define RANGE_OF_INT_VALUES 1024
 
 using namespace std;
 int main()

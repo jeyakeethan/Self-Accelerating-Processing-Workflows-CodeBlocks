@@ -10,10 +10,10 @@
 1597930755 e:\fyp\self-accelerating processing workflows\include\computationalmodel.h
 	<time.h>
 
-1597929431 source:e:\fyp\self-accelerating processing workflows\main.cpp
+1597945148 source:e:\fyp\self-accelerating processing workflows\main.cpp
 	<iostream>
 	<ComputationalModel.h>
-	"src/ArrayAdditionModel.cpp"
+	<ArrayAdditionModel.h>
 	<random>
 
 1597819270 e:\fyp\self-accelerating processing workflows\src\arrayadditionmodel.h
@@ -36,4 +36,7 @@
 	<functional>
 
 1597858912 e:\fyp\self-accelerating processing workflows\include\workflowmanager.h
+
+1597945718 e:\fyp\self-accelerating processing workflows\include\arrayadditionmodel.h
+	<ComputationalModel.h>
 
