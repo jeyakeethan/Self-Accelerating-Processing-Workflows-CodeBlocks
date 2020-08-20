@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1597820902 source:e:\fyp\self-accelerating processing workflows\src\computationalmodel.cpp
+1597856332 source:e:\fyp\self-accelerating processing workflows\src\computationalmodel.cpp
 	<iostream>
 	<computationalmodel.h>
 	<windows.h>
@@ -7,24 +7,36 @@
 	<set>
 	<time.h>
 	<stdlib.h>
+	<thread>
+	<future>
 
-1597820773 e:\fyp\self-accelerating processing workflows\include\computationalmodel.h
+1597929431 e:\fyp\self-accelerating processing workflows\include\computationalmodel.h
+	<windows.h>
 
-1597820574 source:e:\fyp\self-accelerating processing workflows\main.cpp
+1597929431 source:e:\fyp\self-accelerating processing workflows\main.cpp
 	<iostream>
 	<ComputationalModel.h>
-	<ArrayAdditionModel.cpp>
+	"src/ArrayAdditionModel.cpp"
 	<random>
 
 1597819270 e:\fyp\self-accelerating processing workflows\src\arrayadditionmodel.h
 	<iostream>
 	<ComputationalModel.h>
 
-1597820065 source:e:\fyp\self-accelerating processing workflows\src\arrayadditionmodel.cpp
+1597924260 source:e:\fyp\self-accelerating processing workflows\src\arrayadditionmodel.cpp
 	<iostream>
 	<ComputationalModel.h>
 
-1597820065 e:\fyp\self-accelerating processing workflows\src\arrayadditionmodel.cpp
+1597929431 e:\fyp\self-accelerating processing workflows\src\arrayadditionmodel.cpp
 	<iostream>
 	<ComputationalModel.h>
+
+1597860679 source:e:\fyp\self-accelerating processing workflows\src\workflowmanager.cpp
+	"WorkflowManager.h"
+	<iostream>
+	<chrono>
+	<thread>
+	<functional>
+
+1597858912 e:\fyp\self-accelerating processing workflows\include\workflowmanager.h
 
