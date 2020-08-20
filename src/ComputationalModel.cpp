@@ -2,11 +2,8 @@
 #include <ComputationalModel.h>
 
 //for time measure
-#include <windows.h>
-#include <iomanip>
-#include <set>
 #include <time.h>
-#include <stdlib.h>
+#include <stdio.h>
 
 //for async function
 #include <thread>
@@ -22,16 +19,11 @@ using namespace std;
 static long tCPU = 0;
 static long tGPU = 0;
 
-void ComputationalModel::execute()
+void ComputationalModel::execute(int mode)
 {
-/*    if(tCPU+tGPU==0){
-        GPUImplementation();
-    } else  */
+    clock_t start, stop;
 
-    LARGE_INTEGER start, stop, freq;
-	QueryPerformanceFrequency(&freq);
-    QueryPerformanceCounter(&start);
-
+    start = clock();
     if(processor == 0){
         CPUImplementation();
     }
@@ -39,16 +31,17 @@ void ComputationalModel::execute()
         GPUImplementation();
     }
 
-    QueryPerformanceCounter(&stop);
-    async(std::launch::async, [&]() { ComputationalModel::updateResults(start, stop, freq, processor); });
+    stop = clock();
+    async(std::launch::async, [&]() { ComputationalModel::updateResults(start, stop, processor); });
     //ComputationalModel::updateResults(start, stop, freq, tCPU, tGPU);
 }
 
-void ComputationalModel::updateResults(LARGE_INTEGER start, LARGE_INTEGER stop, LARGE_INTEGER freq, int processor){
+void ComputationalModel::updateResults(clock_t start, clock_t stop, int processor){
     // To a async function
-    double delay = (double)(stop.QuadPart - start.QuadPart) / (double)freq.QuadPart;
-    int time = int(delay * 100000 + 0.5);
-    if(processor){
+    clock_t delay = stop - start;
+    float time = (float)delay/CLOCKS_PER_SEC;
+    printf ("It took me %d clicks (%f seconds).\n",delay,((float)delay)/CLOCKS_PER_SEC);
+    if(processor==0){
         cout << "CPU Time: " << time << " ms" << endl;
     } else {
         cout << "GPU Time: " << time << " ms" << endl;

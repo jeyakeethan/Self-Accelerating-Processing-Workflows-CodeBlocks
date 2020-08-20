@@ -1,6 +1,5 @@
 #include <iostream>
 #include<ComputationalModel.h>
-#define N 32
 
 using namespace std;
 

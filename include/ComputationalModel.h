@@ -1,16 +1,14 @@
 #ifndef COMPUTATIONALMODEL_H
 #define COMPUTATIONALMODEL_H
-
-#include <windows.h>
-
+#include <time.h>
 
 class ComputationalModel
 {
     public:
         //ComputationalModel();
         //virtual ~ComputationalModel();
-        static void updateResults(LARGE_INTEGER start,LARGE_INTEGER stop,LARGE_INTEGER freq, int processor);
-        void execute();
+        static void updateResults(clock_t start, clock_t stop, int processor);
+        void execute(int mode = -1);
 
     protected:
 
