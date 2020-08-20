@@ -1,4 +1,5 @@
-#include "ArrayAdditionModel.h"
+#include <ArrayAdditionModel.h>
+#include <kernels.h>
 #include <Constants.h>
 #include <iostream>
 
