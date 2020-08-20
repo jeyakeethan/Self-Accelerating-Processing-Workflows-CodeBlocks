@@ -1,5 +1,5 @@
 #include <iostream>
-#include <computationalmodel.h>
+#include <ComputationalModel.h>
 
 //for time measure
 #include <windows.h>
